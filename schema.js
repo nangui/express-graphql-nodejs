@@ -2,13 +2,14 @@ import {makeExecutableSchema} from 'graphql-tools'
 import resolvers from './resolvers'
 
 const typeDefs = `type Employee {
-    numero: Int
+    id: Int
     firstname: String
     lastname: String
     skills: [String]
 }
     type Query {
-        employee: [Employee]
+        employees: [Employee],
+        employee(id: Int): Employee
     }
 `
 

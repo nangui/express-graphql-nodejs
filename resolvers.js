@@ -1,22 +1,31 @@
 const employees = [
   {
-    numero: 1001,
+    id: 1001,
     firstname: "Adonai",
     lastname: "Nangui",
     skills: ["Developpeur web", "Analyste", "Developpeur mobile"]
   },
   {
-    numero: 1002,
+    id: 1002,
     firstname: "Adja",
     lastname: "Kane",
     skills: ["Admin Rx", "Developpeur web"]
+  },
+  {
+    id: 1003,
+    firstname: "Marie",
+    lastname: "Nangui",
+    skills: ["Marketing digital", "Management"]
   }
 ]
 
 const resolvers = {
     Query: {
-        employee: () => {
+        employees: () => {
             return employees
+        },
+        employee: (root, {id}) => {
+            return employees.find(employee => employee.id === id)
         }
     }
 }
