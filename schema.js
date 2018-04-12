@@ -2,16 +2,17 @@ import {makeExecutableSchema} from 'graphql-tools'
 import resolvers from './resolvers'
 
 const typeDefs = `type Employee {
-    id: Int
+    id: String
     firstname: String
     lastname: String
+    phonenumber: Int,    
     skills: [String]
 }
     type Query {
         employees: [Employee],
-        employee(id: Int): Employee
+        employee(id: String): Employee
     }
-`
+`;
 
 const schema = makeExecutableSchema({typeDefs, resolvers})
 
