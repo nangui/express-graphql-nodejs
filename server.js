@@ -10,7 +10,9 @@ app.use('/graphiql', graphiqlExpress({
     endpointURL: 'graphql'
 }))
 
-mongoose.connect('mongodb://localhost/graphqlExpress')
+mongoose.connect('mongodb://localhost/graphqlExpress', {
+    useMongoClient: true
+})
 
 const connection = mongoose.connection
 

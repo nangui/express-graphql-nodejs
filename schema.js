@@ -14,6 +14,8 @@ const typeDefs = `type Employee {
     }
     type Mutation {
         addEmployee(firstname: String, lastname: String, phonenumber: Int, skills: [String]): Employee
+        deleteEmployee(id: String!): Employee
+        updateEmployee(id: String!, firstname: String!, lastname: String!): Employee
     }
 `;
 
