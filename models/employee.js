@@ -1,9 +1,9 @@
 import mongoose from 'mongoose'
 import uuid from 'node-uuid'
 
-const schema = mongoose.schema
+const Schema = mongoose.Schema
 
-const employeeSchema = new schema({
+const employeeSchema = new Schema({
   id: {type: String, default: uuid.v1},
   firstname: String,
   lastname: String,
@@ -12,3 +12,5 @@ const employeeSchema = new schema({
 })
 
 const model = mongoose.model('employee', employeeSchema)
+
+export default model

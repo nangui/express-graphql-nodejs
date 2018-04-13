@@ -12,6 +12,9 @@ const typeDefs = `type Employee {
         employees: [Employee],
         employee(id: String): Employee
     }
+    type Mutation {
+        addEmployee(firstname: String, lastname: String, phonenumber: Int, skills: [String]): Employee
+    }
 `;
 
 const schema = makeExecutableSchema({typeDefs, resolvers})
